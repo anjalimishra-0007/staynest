@@ -21,13 +21,19 @@ export default function Trips() {
 
   // TODO: ask for confirmation before cancelling.
   const cancel = async (id) => {
-    try {
-      await api.patch(`/bookings/${id}/cancel`);
-      load();
-    } catch (err) {
-      setError(getErrorMessage(err));
-    }
-  };
+  const confirmed = window.confirm(
+    'Are you sure you want to cancel this trip?'
+  );
+
+  if (!confirmed) return;
+
+  try {
+    await api.patch(`/bookings/${id}/cancel`);
+    load();
+  } catch (err) {
+    setError(getErrorMessage(err));
+  }
+};
 
   if (!bookings && !error) return <Loader />;
 
