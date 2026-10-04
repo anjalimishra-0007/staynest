@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
 import api, { getErrorMessage } from '../../api/client.js';
 import { STAY_TYPES } from '../../utils/format.js';
 
