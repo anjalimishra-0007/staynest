@@ -1,3 +1,4 @@
+import LocationMap from '../components/LocationMap.jsx';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api, { getErrorMessage } from '../api/client.js';
@@ -50,8 +51,14 @@ export default function ListingDetail() {
           </ul>
 
           <h3>Location</h3>
-          <p className="muted">{listing.address}, {listing.city}</p>
-          {/* TODO: show a map (Leaflet + OpenStreetMap) - see issue tracker */}
+
+<p className="muted">{listing.address}, {listing.city}</p>
+
+<LocationMap
+  address={listing.address}
+  city={listing.city}
+  state={listing.state}
+/>
 
           <Reviews listingId={listing._id} onReviewAdded={load} />
         </div>
