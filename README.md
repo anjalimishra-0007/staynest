@@ -6,6 +6,12 @@ It is built as a **beginner-friendly open-source project**: real features, clear
 
 ## ✨ Features
 
+## 📸 Screenshots
+
+### Home Page
+
+![StayNest Home Page](docs/home.png)
+
 - 🔐 JWT auth with two roles: **guest** and **host**
 - 🔎 Search stays by city, type, number of guests and max price
 - 🏠 Listing detail page with amenities, host info and reviews
